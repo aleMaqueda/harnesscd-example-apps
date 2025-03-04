@@ -9,7 +9,7 @@ image:
   tag: 0.1
   pullPolicy: IfNotPresent
   env:
-    var1: abc
+    var1: <+stage.variables.IMAGE_TAG>
 service:
   type: ClusterIP
   port: 80
