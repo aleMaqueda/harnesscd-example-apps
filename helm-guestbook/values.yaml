@@ -6,10 +6,9 @@ replicaCount: 3
 
 image:
   repository:  <+artifact.image>
-  tag: 0.1
   pullPolicy: IfNotPresent
   env:
-    var1: <+stage.variables.IMAGE_TAG>
+    var1: <+stage.variables.VAR1>
 service:
   type: ClusterIP
   port: 80
