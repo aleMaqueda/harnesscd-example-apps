@@ -29,15 +29,15 @@ spec:
             value: "{{ .Values.image.env.var1 }}"
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
+              path: /greeting
               port: http
           readinessProbe:
             httpGet:
-              path: /
+              path: /greeting
               port: http
           resources:
 {{ toYaml .Values.resources | indent 12 }}
