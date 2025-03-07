@@ -35,10 +35,18 @@ spec:
             httpGet:
               path: /greeting
               port: http
+            initialDelaySeconds: 60
+            periodSeconds: 60
+            failureThreshold: 5
+            timeoutSeconds: 15
           readinessProbe:
             httpGet:
               path: /greeting
               port: http
+            initialDelaySeconds: 60
+            periodSeconds: 60
+            failureThreshold: 5
+            timeoutSeconds: 15
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
